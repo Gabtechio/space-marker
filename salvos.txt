@@ -1,1 +1,1 @@
-{'Desconhecido (445, 199)': (445, 199)}
+{'Desconhecido (272, 147)': (272, 147), 'Desconhecido (791, 287)': (791, 287)}

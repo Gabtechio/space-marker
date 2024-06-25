@@ -41,7 +41,7 @@ def jogo():
 
 
 
-                elif evento.type == pygame.KEYDOWN and evento.key == pygame.K_F1:
+                elif evento.type == pygame.KEYDOWN and evento.key == pygame.K_1:         #Para salvar
                     try:
                         arquivo = open("salvos.txt","w")
                         arquivo.write(str(Star))
@@ -49,7 +49,7 @@ def jogo():
                     except:
                         pass
 
-                elif evento.type == pygame.KEYDOWN and evento.key == pygame.K_F2:
+                elif evento.type == pygame.KEYDOWN and evento.key == pygame.K_2:        #Para carregar
                     try:
                         tela.fill(branco)
                         arquivo = open("salvos.txt","r")
@@ -57,7 +57,7 @@ def jogo():
                         arquivo.close()
                     except:
                         pass
-                elif evento.type == pygame.KEYDOWN and evento.key == pygame.K_Fs3:
+                elif evento.type == pygame.KEYDOWN and evento.key == pygame.K_3:       #Para excluir
                         Star = {}             
                         arquivo = open("salvos.txt","w")
                         arquivo.write(str(Star))
@@ -65,11 +65,11 @@ def jogo():
 
             tela.blit(fundo,(0,0))
 
-            salvar_texto = fonte.render("Aperte F1 para salvar os pontos",True,branco)
+            salvar_texto = fonte.render("Aperte 1 para salvar os pontos",True,branco)    
             tela.blit(salvar_texto,(5,0))
-            carregar = fonte.render("Aperte F2 para carregar os pontos",True,branco)
+            carregar = fonte.render("Aperte 2 para carregar os pontos",True,branco)
             tela.blit(carregar,(5,15))
-            excluir = fonte.render("Aperte F3 para salvar os pontos",True,branco)
+            excluir = fonte.render("Aperte 3 para salvar os pontos",True,branco)
             tela.blit(excluir,(5,30))
 
             for key, value in Star.items():
