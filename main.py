@@ -16,10 +16,25 @@ fonte = pygame.font.SysFont("comicsans",15)
 
 branco  = (255,255,255)
 
+Star = {}
+
 while True:                                  
     for evento in pygame.event.get():        
         if evento.type == pygame.QUIT:       
             quit()
+        elif evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE:
+                arquivo = open("salvos.txt","w")
+                arquivo.write(str(Star))
+                arquivo.close()
+                quit()
+        elif evento.type == pygame.MOUSEBUTTONDOWN:
+                nome_star = simpledialog.askstring("...","Insira um nome:")
+                if not nome_star:
+                    nome_star = (f"Desconhecido {evento.pos}")
+                Star[nome_star] = evento.pos
+
+
+
     tela.fill(branco) 
     tela.blit(fundo,(0,0))
 
