@@ -20,7 +20,11 @@ Star = {}
 
 while True:                                  
     for evento in pygame.event.get():        
-        if evento.type == pygame.QUIT:       
+        if evento.type == pygame.QUIT:
+            arquivo = open("salvos.txt","w")
+            arquivo.write(str(Star))
+            arquivo.close()
+       
             quit()
         elif evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE:
                 arquivo = open("salvos.txt","w")
@@ -37,6 +41,11 @@ while True:
 
     tela.fill(branco) 
     tela.blit(fundo,(0,0))
+
+    for key,value in Star.items():
+            texto = fonte.render(key,True,branco)
+            tela.blit(texto,value)
+            pygame.draw.circle(tela,branco,value,5)
 
 
 
