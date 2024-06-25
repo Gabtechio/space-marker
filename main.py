@@ -41,7 +41,7 @@ def jogo():
 
 
 
-                elif evento.type == pygame.KEYDOWN and evento.key == pygame.K_1:
+                elif evento.type == pygame.KEYDOWN and evento.key == pygame.K_F1:
                     try:
                         arquivo = open("salvos.txt","w")
                         arquivo.write(str(Star))
@@ -49,7 +49,7 @@ def jogo():
                     except:
                         pass
 
-                elif evento.type == pygame.KEYDOWN and evento.key == pygame.K_2:
+                elif evento.type == pygame.KEYDOWN and evento.key == pygame.K_F2:
                     try:
                         tela.fill(branco)
                         arquivo = open("salvos.txt","r")
@@ -57,7 +57,7 @@ def jogo():
                         arquivo.close()
                     except:
                         pass
-                elif evento.type == pygame.KEYDOWN and evento.key == pygame.K_3:
+                elif evento.type == pygame.KEYDOWN and evento.key == pygame.K_Fs3:
                         Star = {}             
                         arquivo = open("salvos.txt","w")
                         arquivo.write(str(Star))
